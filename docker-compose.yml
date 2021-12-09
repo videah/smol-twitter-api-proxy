@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  twitter-proxy:
+    build: .
+    environment:
+      FLASK_ENV: production
+      TWITTER_BEARER_TOKEN: replace-me
