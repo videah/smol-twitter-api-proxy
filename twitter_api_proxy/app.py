@@ -13,7 +13,6 @@ def nab_tweet(tweet_id):
     tweet = twitter.get_tweet(tweet_id, expansions="attachments.media_keys", media_fields=["type", "url"], tweet_fields=["text", "author_id"])
     user = twitter.get_user(id=tweet.data.author_id)
     urls = [media.url + ':orig' for media in tweet.includes['media']]
-    print(dir(user))
     response = {
         "username": user.data.username,
         "text": tweet.data.text,
